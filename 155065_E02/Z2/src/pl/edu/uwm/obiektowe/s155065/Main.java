@@ -1,38 +1,31 @@
 package pl.edu.uwm.obiektowe.s155065;
-import java.util.ArrayList;
-import java.util.LinkedList;
+package Poprawione;
+import java.util.*;
 
-public class Main {
+public class Z2 {
 
-    public static <E> void wypiszCoDrugi(Iterable<E> it)
+    public static <E> void wypiszCoDrugi(Iterable<E> obiekt)
     {
-        StringBuffer buf = new StringBuffer();
-        it.forEach(i -> buf.append(i.toString()));
-        for(int i=0; i<buf.length(); i++)
+        Iterator<E> it = obiekt.iterator();
+        for(int j=0; it.hasNext(); j++)
         {
-            if(i%2==0)
-                buf.setCharAt(i,',');
+            System.out.print(it.next());
+            if(it.hasNext())
+                it.next();
+                if(it.hasNext())
+                    System.out.print(",");
         }
-        buf.deleteCharAt(0);
-        if(buf.length() % 2 == 0)
-            buf.deleteCharAt(buf.length()-1);
-        System.out.println(buf);
+        System.out.println();
+
     }
 
-    public static void main(String[] args)
-    {
-        ArrayList<Character> t1 = new ArrayList<>();
-        t1.add('@');
-        t1.add('#');
-        t1.add('$');
-        t1.add('%');
-        LinkedList<Integer> t2 = new LinkedList<>();
-        t2.add(1);
-        t2.add(2);
-        t2.add(3);
-        t2.add(4);
-        t2.add(5);
-        wypiszCoDrugi(t1);
-        wypiszCoDrugi(t2);
+    public static void main(String[] args) {
+
+        ArrayList<Character> lista1 = new ArrayList<>(List.of(new Character[]{'1', '2', '3', '4', '5', '6'}));
+        TreeSet<Character> lista2 = new TreeSet(lista1);
+        LinkedList<Character> lista3 = new LinkedList<>(lista1);
+        wypiszCoDrugi(lista1);
+        wypiszCoDrugi(lista2);
+        wypiszCoDrugi(lista3);
     }
 }
