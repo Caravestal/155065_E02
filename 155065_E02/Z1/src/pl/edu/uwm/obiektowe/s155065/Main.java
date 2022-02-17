@@ -3,9 +3,9 @@ import java.time.LocalTime;
 
 public class Main {
 
-    public static <T extends Comparable> boolean jestPalindromem(T[] tab)
+    public static <T extends Comparable<T>> boolean jestPalindromem(T[] tab)
     {
-        for(int i = 0; i < Math.floor(tab.length/2); i++)
+        for(int i = 0; i < Math.floor((float)tab.length/2); i++)
         {
             if(tab[i].compareTo(tab[tab.length-i-1]) != 0)
                 return false;
