@@ -1,5 +1,4 @@
 package pl.edu.uwm.obiektowe.s155065;
-package Poprawione;
 import java.util.*;
 
 public class Z2 {
